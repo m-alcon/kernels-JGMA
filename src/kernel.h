@@ -17,9 +17,9 @@ class Kernel {
 
 template <typename T>
 void PrintMatrix(const std::vector<std::vector<T>> &m) {
-    for (int i = 0; i < m.size(); ++i) {
+    for (unsigned int i = 0; i < m.size(); ++i) {
         std::cout << "[ ";
-        for (int j = 0; j < m[i].size(); ++j)
+        for (unsigned int j = 0; j < m[i].size(); ++j)
             std::cout << m[i][j] << " ";
         std::cout << "]" << std::endl;
     }
@@ -28,7 +28,7 @@ void PrintMatrix(const std::vector<std::vector<T>> &m) {
 template <typename T>
 void PrintVector(const std::vector<T> &v) {
     std::cout << "[ ";
-    for (int i = 0; i < v.size(); ++i)
+    for (unsigned int i = 0; i < v.size(); ++i)
         std::cout << v[i] << " ";
     std::cout << "]" << std::endl;
 }
