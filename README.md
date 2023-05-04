@@ -35,13 +35,12 @@ Initializes the data structures and runs the kernel.
 Prints relevant information about the data structures and the kernel's result.
 
 ## How to use it
-We exemplify the usage of the kernels with `MatMul`:
+We exemplify the usage of the kernels with `MatMul` stressing a 4MB cache:
 ```cpp
     #include "matmul.h"
-    #define MB 1048576
 
     int main () {
-        Kernel* k = new MatMul(4*MB);
+        Kernel* k = new MatMul(4*Kernel::megabyte);
         k->InitAndRun();
         k->PrintInfo();
     }    
@@ -49,10 +48,9 @@ We exemplify the usage of the kernels with `MatMul`:
 In case the user wants to run 1000 times the same kernel:
 ```cpp
     #include "matmul.h"
-    #define MB 1048576
 
     int main() {
-        Kernel* k = MatMul(4*MB);
+        Kernel* k = MatMul(4*Kernel::megabyte);
         k->Init();
         for (int i = 0; i < 1000; ++i) {
             k->Run();
@@ -60,4 +58,4 @@ In case the user wants to run 1000 times the same kernel:
     }
 ```
 
-Look at *test.cc* for more examples. It has been the file used to test all kernels.
+Look at *test.cc* for more examples. It is the file used to test all kernels.

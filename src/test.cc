@@ -7,8 +7,6 @@
 #include "relu.h"
 #include "vecmuladd.h"
 
-#define MB 1048576
-
 void test_kernel_once(Kernel* k, const std::string& name) {
     k->InitAndRun();
     std::cout << name << " OK" << std::endl;
@@ -22,7 +20,7 @@ void test_kernel_100_times(Kernel* k, const std::string& name) {
 }
 
 int main() {
-    int cache_size = 4*MB;
+    int cache_size = 4*Kernel::megabyte;
     int cache_size_small = 1024;
     std::cout << "Starting tests" << std::endl;
     test_kernel_once(new Im2Col(cache_size), "Im2Col");

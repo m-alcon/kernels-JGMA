@@ -12,6 +12,7 @@ class Kernel {
         virtual void Run() = 0;
         void InitAndRun() { Init(); Run(); }
         virtual void PrintInfo() = 0;
+        static const int megabyte = 1048576;
     private:
 };
 
