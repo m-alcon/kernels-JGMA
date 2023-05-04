@@ -3,6 +3,7 @@
 ## Kernels
 
 - `Im2Col`: Image to column. The algorithm is based on [this](https://leonardoaraujosantos.gitbook.io/artificial-inteligence/machine_learning/deep_learning/convolution_layer/making_faster) explanation.
+
 ![Im2ColAlgorithm](img/im2col.jpg)
 - `MatMul`: matrix multiplication.
 - `MatMulTransp`: matrix multiplication with the second matrix transposed.
