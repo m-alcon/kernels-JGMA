@@ -37,25 +37,30 @@ Prints relevant information about the data structures and the kernel's result.
 ## How to use it
 We exemplify the usage of the kernels with `MatMul` stressing a 4MB cache:
 ```cpp
-    #include "matmul.h"
+#include "matmul.h"
 
-    int main () {
-        Kernel* k = new MatMul(4*Kernel::megabyte);
-        k->InitAndRun();
-        k->PrintInfo();
-    }    
+int main () {
+    Kernel* k = new MatMul(4*Kernel::megabyte);
+    k->InitAndRun();
+    k->PrintInfo();
+}    
 ```
 In case the user wants to run 1000 times the same kernel:
 ```cpp
-    #include "matmul.h"
+#include "matmul.h"
 
-    int main() {
-        Kernel* k = MatMul(4*Kernel::megabyte);
-        k->Init();
-        for (int i = 0; i < 1000; ++i) {
-            k->Run();
-        }
+int main() {
+    Kernel* k = MatMul(4*Kernel::megabyte);
+    k->Init();
+    for (int i = 0; i < 1000; ++i) {
+        k->Run();
     }
+}
 ```
 
-Look at *test.cc* for more examples. It is the file used to test all kernels.
+Look at *src/test.cc* for more examples. It is the file used to test all kernels. The user can compile it using the Makefile.
+```bash
+make        # for compiling
+make clean  # for removing all elements created by the compilation (obj and bin folders)
+```
+The binary generated after the compilation is stored in *bin/test*, and the object files in *obj/*.
