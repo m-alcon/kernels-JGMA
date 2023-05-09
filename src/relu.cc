@@ -19,7 +19,6 @@ void Relu::Init() {
 }
 
 void Relu::Run() {
-    float temp;
     for (int i = 0; i < row_col_size; ++i)
         for (int j = 0; j < row_col_size; ++j) {
             if (matrixI[i][j] <= 0)
